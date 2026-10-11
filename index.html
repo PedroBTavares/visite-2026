@@ -4,8 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>visite 2026</title>
+
+    <script type="module" src="js/core/main.js"></script>
+
+    <script type="module" src="js/puzzles/a1.js"></script>
+    <script type="module" src="js/puzzles/a2.js"></script>
+    <script type="module" src="js/puzzles/a3.js"></script>
+    <script type="module" src="js/puzzles/a4.js"></script>
+    <script type="module" src="js/puzzles/a5.js"></script>
+    <script type="module" src="js/puzzles/a6.js"></script>
+    <script type="module" src="js/puzzles/final.js"></script>
+
+    <link rel="stylesheet" href="css/core.css">
 </head>
 <body>
+    <header>
+        <div>
+            <h1>VISITE 2026</h1>
+            <p>
+                <span id="seals">
+                    <span id="seal-a1"></span>
+                    <span id="seal-a2"></span>
+                    <span id="seal-a3"></span>
+                    <span id="seal-a4"></span>
+                    <span id="seal-a5"></span>
+                    <span id="seal-a6"></span>
+                    <span id="seal-final"></span>
+                </span>
+                <button class="restart">Reiniciar</button>
+            </p>
+        </div>
+        <div id="watch"></div>
+    </header>
+
+    <main>
+        <button id="arrow-left" aria-label="Face anterior">◀</button>
+        <div class="scene">
+            <div class="cube">
+                <section class="face" data-face="1" style="--n:0">
+                    <div class="painel" id="a1">
+                        <h2>Enigma 1</h2>
+                        <div class="conteudo"></div>
+                    </div>
+                    <div class="painel" id="a2">
+                        <h2>Enigma 2</h2>
+                        <div class="conteudo"></div>
+                    </div>
+                </section>
+                <section class="face" data-face="2" style="--n:1">
+                    <div class="painel" id="a3">
+                        <h2>Enigma 3</h2>
+                        <div class="conteudo"></div>
+                    </div>
+                    <div class="painel" id="a4">
+                        <h2>Enigma 4</h2>
+                        <div class="conteudo"></div>
+                    </div>
+                </section>
+                <section class="face" data-face="3" style="--n:2">
+                    <div class="painel" id="a5">
+                        <h2>Enigma 5</h2>
+                        <div class="conteudo"></div>
+                    </div>
+                    <div class="painel" id="a6">
+                        <h2>Enigma 6</h2>
+                        <div class="conteudo"></div>
+                    </div>
+                </section>
+                <section class="face face-final" data-face="4" style="--n:3">
+                    <div class="painel" id="final">
+                        <h2>Enigma FINAL</h2>
+                        <div class="conteudo"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <button id="arrow-right" aria-label="Próxima face">▶</button>
+    </main>
+
+    <!-- Modais -->
+
+    <div class="centralizer" id="init-modal">
+        <div class="modal">
+            <h2>VISITE 2026</h2>
     
+            <p>7 enigmas e um manual.</p>
+            <p>
+                Você e sua dupla devem se ajudar para resolver os enigmas que preparamos e descobrir o que esta caixa esconde.
+                <br>
+                Um de vocês estará cara a cara com os enigmas enquanto o outro terá o manual com as dicas para resolve-los.
+                <br>
+                Um não vê a tela do outro.
+            </p>
+    
+            <button id="start">Iniciar</button>
+        </div>
+    </div>
+
+    <!-- <div class="modal" id="winModal"></div> -->
+    <!-- O conteúdo da vitória estará dentro da caixa -->
+
+    <div class="centralizer" id="loss-modal">
+        <div class="modal">
+            <h2>Tempo esgotado</h2>
+            <p>Mas sempre dá para tentar de novo.</p>
+            <button class="restart">Reiniciar</button>
+        </div>
+    </div>
 </body>
 </html>
