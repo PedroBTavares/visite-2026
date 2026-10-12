@@ -1,47 +1,59 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Área onde o cubo fica centralizado, abaixo do topo (ajuste 70px à altura do seu topo) */
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #EEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEE;
 }
 
 /* A "cena" tem o tamanho fixo de uma face e é reduzida pelo JS para caber na janela */
 .scene {
-  flex: none;
-  width: 960px;
-  height: 480px;
-  perspective: 2400px;                       /* dá profundidade ao giro */
-  transform: scale(var(--scale, 1));
-  background-color: #DDD;
+    flex: none;
+    width: 960px;
+    height: 480px;
+    perspective: 2400px;
+    /* dá profundidade ao giro */
+    transform: scale(var(--scale, 1));
+    background-color: #DDD;
 }
 
 .cube {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;              /* sem isso as faces ficam "achatadas" */
-  transform: translateZ(-480px) rotateY(calc(var(--giro, 0) * -90deg));
-  transition: transform 0.8s cubic-bezier(0.4, 0.1, 0.2, 1);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* sem isso as faces ficam "achatadas" */
+    transform: translateZ(-480px) rotateY(calc(var(--giro, 0) * -90deg));
+    transition: transform 0.8s cubic-bezier(0.4, 0.1, 0.2, 1);
 }
 
 .face {
-  position: absolute;
-  inset: 0;                                  /* ocupa 960 x 560 */
-  backface-visibility: hidden;               /* esconde a face quando está de costas */
-  transform: rotateY(calc(var(--n) * 90deg)) translateZ(480px);
-  background: #fff;
-  pointer-events: none;                      /* por padrão ninguém recebe clique */
-  background-color: #CCC;
+    display: flex;
+    position: absolute;
+    inset: 0;
+    /* ocupa 960 x 560 */
+    backface-visibility: hidden;
+    /* esconde a face quando está de costas */
+    transform: rotateY(calc(var(--n) * 90deg)) translateZ(480px);
+    background: #fff;
+    pointer-events: none;
+    /* por padrão ninguém recebe clique */
+    background-color: #CCC;
+}
+
+.painel{
+    flex: auto;
 }
 
 .face.ativa {
     pointer-events: auto;
-}        /* só a face da frente recebe cliques */
+}
+
+/* só a face da frente recebe cliques */
 
 .point {
     width: 14px;
@@ -56,16 +68,18 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cube { transition: none; }
+    .cube {
+        transition: none;
+    }
 }
 
 
 
-body{
+body {
     margin: 0;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,11 +88,11 @@ header{
     background-color: lightgray;
 }
 
-h1{
+h1 {
     margin: 5px;
 }
 
-#seals{
+#seals {
     margin: auto;
     width: fit-content;
     padding: 10px;
@@ -89,7 +103,7 @@ h1{
     color: #FFD700;
 }
 
-#watch{
+#watch {
     width: fit-content;
     padding: 10px;
     border-radius: 5px;
@@ -97,14 +111,14 @@ h1{
     text-align: center;
 }
 
-#watch.red-alert{
+#watch.red-alert {
     color: #FFF;
     background-color: #A00;
 }
 
 
 
-.centralizer{
+.centralizer {
     display: none;
     position: absolute;
     top: 0;
@@ -113,19 +127,19 @@ h1{
     height: 100%;
 }
 
-.modal{
+.modal {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 24px 24px #0003;
     background-color: white;
 }
 
-.exib-modal{
+.exib-modal {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#init-modal > .modal{
+#init-modal>.modal {
     text-align: center;
 }

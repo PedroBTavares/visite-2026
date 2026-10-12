@@ -1,4 +1,4 @@
-const maxTime = 45 * 1000 * 60;
+const maxTime = 15 * 1000 * 60;
 const redAlertTime = 5 * 1000 * 60;
 
 export const game = {
@@ -14,7 +14,6 @@ export const game = {
         a4: false,
         a5: false,
         a6: false,
-        final: false
     },
     interval: null,
     
@@ -55,13 +54,13 @@ export const game = {
             console.log("Enigma já resolvido");
             return;
         }
-        if(puzzle !== "final"){
+        if(puzzle !== "a6"){
             this.solved[puzzle] = true;
             this.notify();
             return;
         }
-        if(puzzle === "final"){
-            if(!this.solved.a1 || !this.solved.a2 || !this.solved.a3 || !this.solved.a4 || !this.solved.a5 || !this.solved.a6){
+        if(puzzle === "a6"){
+            if(!this.solved.a1 || !this.solved.a2 || !this.solved.a3 || !this.solved.a4 || !this.solved.a5){
                 console.log("Não é possível resolver o enigma final sem resolver todos os outros enigmas antes");
                 return;
             }
@@ -73,17 +72,5 @@ export const game = {
 
     notify() {
         document.dispatchEvent(new CustomEvent('game:change'));
-    },
-
-    pending(){
-        return ['a1','a2','a3','a4','a5','a6'].filter(id => !this.solved[id]).length;
-    },
-    
-    isFinalUnlocked(){
-        return this.pending() === 0;
-    },
-
-    isLocked(id){
-        return this.status !== 'playing' || this.solved[id] || (id === 'final' && !this.isFinalUnlocked());
-    },
+    }
 };

@@ -1,13 +1,5 @@
 import { game } from "./game.js";
 window.game = game;
-const seals = {
-    a1:'○',
-    a2:'□',
-    a3:'◇',
-    a4:'☆',
-    a5:'△',
-    a6:'⬡' 
-};
 
 const initModal = document.getElementById("init-modal");
 const lossModal = document.getElementById("loss-modal");
@@ -112,7 +104,6 @@ document.querySelectorAll(".restart").forEach(btn => btn.addEventListener("click
         for(const puzzle in game.solved){
             if(game.solved[puzzle]){
                 document.getElementById(puzzle).classList.add("resolved");
-                document.getElementById("seal-" + puzzle).innerText = seals[puzzle];
             }
         }
     });
