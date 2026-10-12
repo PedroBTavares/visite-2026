@@ -15,11 +15,11 @@ document.querySelectorAll(".restart").forEach(btn => btn.addEventListener("click
 }));
 
 function disableAll() {
-    document.querySelectorAll("fieldset").forEach(fieldset => {
+    document.querySelectorAll("input").forEach(input => {
         if (game.status !== "playing") {
-            fieldset.disabled = true;
+            input.readOnly = true;
         } else {
-            fieldset.disabled = false;
+            input.readOnly = false;
         }
     })
 }
