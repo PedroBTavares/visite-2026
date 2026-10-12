@@ -103,7 +103,9 @@ document.querySelectorAll(".restart").forEach(btn => btn.addEventListener("click
         
         for(const puzzle in game.solved){
             if(game.solved[puzzle]){
-                document.getElementById(puzzle).classList.add("resolved");
+                const puzzlePainel = document.getElementById(puzzle);
+                puzzlePainel.classList.add("resolved");
+                puzzlePainel.querySelector("fieldset").disabled = true;
             }
         }
     });
