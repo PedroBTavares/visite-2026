@@ -151,3 +151,8 @@ h1 {
 h2{
     text-align: center;
 }
+
+.figure{
+    display: none;
+    text-align: center;
+}

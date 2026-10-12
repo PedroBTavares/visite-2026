@@ -1,9 +1,10 @@
-import {game} from "../core/game.js";
+import { game } from "../core/game.js";
 
-(function(){
+(function () {
     document.getElementById("btn-resp-a5").addEventListener("click", () => {
-        if(document.getElementById("resp-a5").value === "58728"){
+        if (document.getElementById("resp-a5").value === "58728") {
             game.solve("a5");
+            document.getElementById("figure5").style.display = "block";
         }
     })
 })()

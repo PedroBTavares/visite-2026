@@ -1,6 +1,6 @@
-import {game} from "../core/game.js";
+import { game } from "../core/game.js";
 
-(function(){
+(function () {
     document.querySelectorAll(".led").forEach(led => {
         const red = "rgb(255, 0, 0)";
         const blue = "rgb(0, 0, 255)";
@@ -8,7 +8,7 @@ import {game} from "../core/game.js";
         const yellow = "rgb(255, 255, 0)";
         led.style.backgroundColor = red;
         led.addEventListener("click", () => {
-            switch (led.style.backgroundColor){
+            switch (led.style.backgroundColor) {
                 case red:
                     led.style.backgroundColor = blue;
                     break;
@@ -26,14 +26,15 @@ import {game} from "../core/game.js";
                     break;
             }
 
-            if(
+            if (
                 document.getElementById("led1").style.backgroundColor == green &&
                 document.getElementById("led2").style.backgroundColor == blue &&
                 document.getElementById("led3").style.backgroundColor == yellow &&
                 document.getElementById("led4").style.backgroundColor == red &&
                 document.getElementById("led5").style.backgroundColor == blue
-            ){
+            ) {
                 game.solve("a3");
+                document.getElementById("figure3").style.display = "block";
             }
         })
     })

@@ -7,6 +7,7 @@ const respA1 = "ehvpe";
 document.getElementById("btn-resp-a1").addEventListener("click", () => {
     if(document.getElementById("resp-a1").value.toLowerCase().trim() === respA1){
         game.solve("a1");
+        document.getElementById("figure1").style.display = "block";
     }
 });
 
