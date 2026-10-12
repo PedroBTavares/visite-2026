@@ -14,6 +14,17 @@ document.querySelectorAll(".restart").forEach(btn => btn.addEventListener("click
     location.reload();
 }));
 
+function disableAll() {
+    document.querySelectorAll("fieldset").forEach(fieldset => {
+        if (game.status !== "playing") {
+            fieldset.disabled = true;
+        } else {
+            fieldset.disabled = false;
+        }
+    })
+}
+disableAll();
+
 (function () {
     const width = 960, height = 480;
     const cube = document.querySelector('.cube');
@@ -85,29 +96,31 @@ document.querySelectorAll(".restart").forEach(btn => btn.addEventListener("click
         if (game.redAlert) {
             watch.classList.add("red-alert");
         }
-        
+
         //desbloqueio das setas do teclado
-        if(game.status === "playing"){
+        if (game.status === "playing") {
             document.getElementById('arrow-left').addEventListener('click', previous);
             document.getElementById('arrow-right').addEventListener('click', next);
         }
 
         //reconhece derrota
-        if(game.status === "lost"){
+        if (game.status === "lost") {
             lossModal.classList.add("exib-modal");
         }
 
-        if(game.status === "lost" || game.status === "won"){
+        if (game.status === "lost" || game.status === "won") {
             document.activeElement.blur();
         }
-        
-        for(const puzzle in game.solved){
-            if(game.solved[puzzle]){
+
+        for (const puzzle in game.solved) {
+            if (game.solved[puzzle]) {
                 const puzzlePainel = document.getElementById(puzzle);
                 puzzlePainel.classList.add("resolved");
                 puzzlePainel.querySelector("fieldset").disabled = true;
             }
         }
+
+        disableAll();
     });
 
     document.addEventListener('keydown', (e) => {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,12 @@
     <link rel="stylesheet" href="css/core.css">
     <link rel="stylesheet" href="css/puzzles/a1.css">
     <link rel="stylesheet" href="css/puzzles/a2.css">
+    <link rel="stylesheet" href="css/puzzles/a3.css">
+    <link rel="stylesheet" href="css/puzzles/a4.css">
+    <link rel="stylesheet" href="css/puzzles/a5.css">
+    <link rel="stylesheet" href="css/puzzles/a6.css">
 </head>
+
 <body>
     <header>
         <div>
@@ -42,9 +48,9 @@
                                 <br>
                                 Os viajantes seguiram elém da enseada.
                                 <br>
-                                A qente observou a derra fértil e a 
+                                A qente observou a derra fértil e a
                                 <br>
-                                eldeia próxima do rio.” 
+                                eldeia próxima do rio.”
                             </p>
                             <fieldset class="input-a1">
                                 <label for="resp-a1">Código da carta:</label><br>
@@ -66,8 +72,22 @@
                 </section>
                 <section class="face" data-face="2" style="--n:1">
                     <div class="painel" id="a3">
-                        <h2>Enigma 3</h2>
-                        <div class="content"></div>
+                        <h2>DNA</h2>
+                        <div class="content">
+                            <p>
+                                A - Vermelho <br>
+                                T - Azul <br>
+                                G - Verde <br>
+                                C - Amarelo <br>
+                            </p>
+                            <fieldset class="leds">
+                                <input type="button" class="led" id="led1"></input> <br>
+                                <input type="button" class="led" id="led2"></input> <br>
+                                <input type="button" class="led" id="led3"></input> <br>
+                                <input type="button" class="led" id="led4"></input> <br>
+                                <input type="button" class="led" id="led5"></input> <br>
+                            </fieldset>
+                        </div>
                     </div>
                     <div class="painel" id="a4">
                         <h2>Enigma 4</h2>
@@ -96,16 +116,18 @@
     <div class="centralizer" id="init-modal">
         <div class="modal">
             <h2>VISITE 2026</h2>
-    
+
             <p>7 enigmas e um manual.</p>
             <p>
-                Você e sua dupla devem se ajudar para resolver os enigmas que preparamos e descobrir o que esta caixa esconde.
+                Você e sua dupla devem se ajudar para resolver os enigmas que preparamos e descobrir o que esta caixa
+                esconde.
                 <br>
-                Um de vocês estará cara a cara com os enigmas enquanto o outro terá o manual com as dicas para resolve-los.
+                Um de vocês estará cara a cara com os enigmas enquanto o outro terá o manual com as dicas para
+                resolve-los.
                 <br>
                 Um não vê a tela do outro.
             </p>
-    
+
             <button id="start">Iniciar</button>
         </div>
     </div>
@@ -121,4 +143,5 @@
         </div>
     </div>
 </body>
+
 </html>
