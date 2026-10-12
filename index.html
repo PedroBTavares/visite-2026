@@ -98,9 +98,11 @@
                         <div class="content">
                             <fieldset class="phrase">
                                 Na página antiga, desenharam um <input type="text" id="simbol1" class="simbols"><br>
-                                sobre o caminho. Perto da porta havia um <input type="text" id="simbol2" class="simbols">, <br>
+                                sobre o caminho. Perto da porta havia um <input type="text" id="simbol2"
+                                    class="simbols">, <br>
                                 e uma <input type="text" id="simbol3" class="simbols">
-                                marcava o <br> chão. Um <input type="text" id="simbol4" class="simbols"> pousou na janela <br>
+                                marcava o <br> chão. Um <input type="text" id="simbol4" class="simbols"> pousou na
+                                janela <br>
                                 enquanto um <input type="text" id="simbol5" class="simbols"> ficou preso ao galho.
                                 <br>
                                 <button id="btn-resp-a4">preencher</button>
@@ -162,8 +164,19 @@
         </div>
     </div>
 
-    <!-- <div class="modal" id="winModal"></div> -->
-    <!-- O conteúdo da vitória estará dentro da caixa -->
+
+    <div class="centralizer" id="win-modal">
+        <div class="modal">
+            <h2>Parabéns!</h2>
+            <p>Vocês resolveram todos os enigmas!</p>
+            <p>
+                Aqui está o seu certificado de aptidão da ETEC Fernando Prestes.
+                <br>
+                <img class="certificate" src="./assets/certificate.png" alt="imagem de certificado">
+            </p>
+            <button class="restart">Jogar novamente</button>
+        </div>
+    </div>
 
     <div class="centralizer" id="loss-modal">
         <div class="modal">
