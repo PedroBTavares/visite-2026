@@ -281,5 +281,577 @@ body[data-status="won"] #win-modal .modal {
 }
 
 .certificate{
-    width: 400px;
+    width: 300px;
+}
+
+
+/* =========================================================
+   VISITE 2026 — IDENTIDADE VISUAL DO COFRE - feito com IA
+   Complemento para css/core.css
+   Não altera as transformações 3D nem as animações existentes.
+   ========================================================= */
+
+/* ---------- Paleta e tipografia ---------- */
+
+:root {
+    --vault-bg: #0b121b;
+    --vault-bg-soft: #121d29;
+    --vault-metal: #202d3a;
+    --vault-metal-light: #354451;
+    --vault-gold: #c6a363;
+    --vault-gold-light: #ead19a;
+    --vault-text: #e8e3d7;
+    --vault-muted: #aeb8c1;
+    --vault-ink: #1b2630;
+    --vault-success: #9ebda0;
+    --vault-border: rgba(198, 163, 99, 0.55);
+}
+
+body {
+    color: var(--vault-text);
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    line-height: 1.5;
+    background-color: var(--vault-bg);
+    background-image:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(48, 69, 87, 0.42),
+            transparent 60%
+        ),
+        linear-gradient(
+            160deg,
+            #101a26 0%,
+            #080e15 100%
+        );
+}
+
+/* ---------- Cabeçalho ---------- */
+
+header {
+    position: relative;
+    z-index: 10;
+    gap: 20px;
+    padding: 14px 24px;
+    color: var(--vault-text);
+    background:
+        linear-gradient(
+            110deg,
+            #263543 0%,
+            #111b27 55%,
+            #202c37 100%
+        );
+    border-bottom: 2px solid var(--vault-gold);
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.35),
+        inset 0 -1px rgba(255, 255, 255, 0.04);
+}
+
+header h1 {
+    margin: 6px 5px;
+    color: var(--vault-gold-light);
+    font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.25;
+    text-shadow: 0 2px 10px rgba(198, 163, 99, 0.2);
+}
+
+header p {
+    margin: 8px 5px 0;
+}
+
+/* ---------- Relógio ---------- */
+
+#watch {
+    min-width: 112px;
+    padding: 10px 14px;
+    color: #f5d995;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.06em;
+    background: linear-gradient(180deg, #101820, #080d12);
+    border: 1px solid var(--vault-gold);
+    border-radius: 8px;
+    box-shadow:
+        inset 0 0 12px rgba(0, 0, 0, 0.75),
+        0 0 8px rgba(198, 163, 99, 0.08);
+}
+
+/* Mantém o estado de alerta controlado pelo JavaScript. */
+#watch.red-alert {
+    color: #fff3f0;
+    background: linear-gradient(180deg, #842f32, #4b171b);
+    border-color: #df7771;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Área de jogo ---------- */
+
+main {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(42, 59, 75, 0.72),
+            rgba(14, 22, 32, 0.96) 70%
+        ),
+        var(--vault-bg);
+}
+
+/* Remove apenas o retângulo cinza de fundo da cena.
+   A propriedade transform original é preservada. */
+.scene {
+    background-color: transparent;
+}
+
+/* ---------- Faces metálicas ---------- */
+
+.cube .face {
+    box-sizing: border-box;
+    padding: 18px;
+    color: var(--vault-text);
+    background:
+        linear-gradient(
+            145deg,
+            #344351 0%,
+            #202d3a 38%,
+            #131d28 72%,
+            #293744 100%
+        );
+    border: 8px solid #17222d;
+    box-shadow:
+        inset 0 0 0 2px rgba(198, 163, 99, 0.8),
+        inset 0 0 0 5px rgba(0, 0, 0, 0.22),
+        inset 0 0 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Moldura decorativa da porta do cofre. */
+.cube .face::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    z-index: 0;
+    border: 1px solid rgba(234, 209, 154, 0.28);
+    border-radius: 5px;
+    box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+}
+
+/* Painéis dos enigmas.
+   Mantém os elementos em seu layout flexível atual. */
+.cube .face > .painel {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+    margin: 7px;
+    padding: clamp(12px, 2vw, 22px);
+    color: var(--vault-text);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34, 48, 62, 0.98),
+            rgba(17, 27, 39, 0.99)
+        );
+    border: 1px solid rgba(198, 163, 99, 0.48);
+    border-radius: 10px;
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 0 18px rgba(0, 0, 0, 0.16),
+        0 5px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos dos enigmas. */
+.cube .painel h2 {
+    margin: 0 0 14px;
+    color: var(--vault-gold-light);
+    font-size: 1.22rem;
+    font-weight: 750;
+    line-height: 1.3;
+    letter-spacing: 0.035em;
+    text-wrap: balance;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.cube .painel p {
+    color: var(--vault-text);
+}
+
+.cube .painel .figure {
+    color: var(--vault-gold-light);
+    font-size: 1.3rem;
+}
+
+/* Texto que imita um documento histórico. */
+.cube .painel .letter {
+    color: #eee1c6;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    font-style: italic;
+}
+
+/* ---------- Estado dos enigmas ---------- */
+
+/* A classe .resolved continua sendo adicionada pelo JavaScript. */
+.cube .painel.resolved {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(38, 62, 56, 0.98),
+            rgba(21, 40, 38, 0.99)
+        );
+    border-color: rgba(158, 189, 160, 0.85);
+    box-shadow:
+        inset 0 0 0 1px rgba(158, 189, 160, 0.14),
+        inset 0 0 22px rgba(0, 0, 0, 0.15),
+        0 0 12px rgba(112, 158, 121, 0.08);
+}
+
+.cube .painel.resolved h2 {
+    color: #c3dfbe;
+}
+
+/* ---------- Campos e caixas de resposta ---------- */
+
+.cube .painel fieldset {
+    box-sizing: border-box;
+    min-width: 0;
+    margin: 10px 0;
+    padding: 11px 13px;
+    color: var(--vault-text);
+    background: rgba(5, 12, 19, 0.28);
+    border: 1px solid rgba(198, 163, 99, 0.42);
+    border-radius: 8px;
+}
+
+.cube .painel label {
+    color: var(--vault-gold-light);
+    font-weight: 600;
+}
+
+.cube .painel input:not([type="button"]) {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    padding: 8px 10px;
+    color: #202a32;
+    font: 500 0.96rem/1.3 "Segoe UI", Tahoma, Arial, sans-serif;
+    background: #f1eadb;
+    border: 1px solid #ac9569;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.cube .painel input:not([type="button"]):focus {
+    border-color: #f0cd7e;
+    outline: 2px solid rgba(234, 209, 154, 0.35);
+    outline-offset: 1px;
+}
+
+/* Os campos de palavras precisam caber na frase do enigma. */
+.cube .painel input.simbols {
+    width: 78px;
+    padding: 5px 6px;
+    vertical-align: middle;
+}
+
+/* Diferencia campos somente de leitura sem bloquear interação por CSS. */
+.cube .painel input:read-only {
+    background-color: #d2cbbb;
+    border-color: #89806e;
+    color: #5d5a52;
+}
+
+/* ---------- Botões ---------- */
+
+button,
+input[type="button"]:not(.led) {
+    box-sizing: border-box;
+    padding: 10px 16px;
+    color: #f8e7bd;
+    font: 700 0.9rem/1.25 "Segoe UI", Tahoma, Arial, sans-serif;
+    letter-spacing: 0.025em;
+    background: linear-gradient(180deg, #48545e, #283541);
+    border: 1px solid #b9985d;
+    border-radius: 7px;
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.08),
+        0 3px 7px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+button:hover,
+input[type="button"]:not(.led):hover {
+    color: #fff6df;
+    background: linear-gradient(180deg, #5b6872, #344351);
+    border-color: var(--vault-gold-light);
+    box-shadow: 0 0 10px rgba(198, 163, 99, 0.16);
+}
+
+button:active,
+input[type="button"]:not(.led):active {
+    background: #202d39;
+}
+
+button:disabled,
+input:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--vault-gold-light);
+    outline-offset: 3px;
+}
+
+/* Reiniciar é um controle secundário do cabeçalho. */
+header .restart {
+    padding: 8px 13px;
+    color: #e6d0a0;
+    background: rgba(7, 13, 20, 0.3);
+    border-color: rgba(198, 163, 99, 0.65);
+    box-shadow: none;
+}
+
+/* ---------- Navegação entre faces ---------- */
+
+#arrow-left,
+#arrow-right {
+    min-width: 42px;
+    min-height: 50px;
+    padding: 8px;
+    color: var(--vault-gold-light);
+    font-size: 1.15rem;
+    background: linear-gradient(180deg, #354553, #17232e);
+    border: 1px solid var(--vault-gold);
+    border-radius: 9px;
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.07),
+        0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+#arrow-left:hover,
+#arrow-right:hover {
+    color: #fff3d1;
+    background: linear-gradient(180deg, #52616d, #263644);
+    border-color: #f0d18f;
+}
+
+/* ---------- Enigma do DNA ---------- */
+
+/* Preserva o background-color dos LEDs, pois pode indicar seu estado. */
+.cube .painel input.led {
+    border: 3px solid var(--vault-gold);
+    box-shadow:
+        inset 0 0 0 2px rgba(0, 0, 0, 0.2),
+        0 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+.cube .painel input.led:hover {
+    filter: brightness(1.08);
+}
+
+/* ---------- Face do cofre ---------- */
+
+.cube .face.face-final {
+    background:
+        radial-gradient(
+            circle at center,
+            #40505d 0%,
+            #263541 38%,
+            #17232e 72%,
+            #111a24 100%
+        );
+}
+
+.cube .face.face-final > .painel {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(42, 56, 67, 0.98),
+            rgba(19, 29, 40, 0.99)
+        );
+}
+
+/* A moldura do último enigma lembra o painel de um cofre. */
+.cube .face.face-final .safe-painel {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: auto;
+    padding: 64px 24px 22px;
+    color: var(--vault-text);
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(198, 163, 99, 0.12),
+            transparent 70%
+        ),
+        linear-gradient(145deg, #2c3944, #17232d);
+    border: 3px double var(--vault-gold);
+    border-radius: 13px;
+    box-shadow:
+        inset 0 0 0 4px rgba(0, 0, 0, 0.12),
+        inset 0 0 22px rgba(0, 0, 0, 0.24),
+        0 7px 18px rgba(0, 0, 0, 0.24);
+}
+
+/* Disco decorativo acima da combinação do cofre. */
+.cube .face.face-final .safe-painel::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 19px);
+    width: 38px;
+    height: 38px;
+    box-sizing: border-box;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #77858c,
+            #354550 48%,
+            #131d27 72%
+        );
+    border: 3px double var(--vault-gold-light);
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 0 3px rgba(0, 0, 0, 0.2),
+        0 0 0 3px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.cube .face.face-final .safe-painel p {
+    color: var(--vault-gold-light);
+    font-weight: 600;
+}
+
+/* ---------- Indicadores de progresso, se utilizados ---------- */
+
+.point {
+    border: 1px solid var(--vault-gold);
+    background-color: #4b5963;
+}
+
+.point.atual {
+    background-color: var(--vault-gold-light);
+    box-shadow: 0 0 8px rgba(234, 209, 154, 0.35);
+}
+
+#seals {
+    color: var(--vault-gold-light);
+    background: linear-gradient(145deg, #344451, #17232d);
+    border: 1px solid var(--vault-gold);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Modais de início e derrota ---------- */
+
+/* O JavaScript controla a exibição por meio de .exib-modal. */
+.centralizer.exib-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    box-sizing: border-box;
+    padding: 22px;
+    background: rgba(4, 9, 15, 0.78);
+    backdrop-filter: blur(6px);
+}
+
+.modal {
+    box-sizing: border-box;
+    width: min(620px, 100%);
+    max-width: 100%;
+    padding: clamp(22px, 4vw, 36px);
+    color: var(--vault-text);
+    background:
+        linear-gradient(
+            145deg,
+            #2b3947,
+            #131e29 75%
+        );
+    border: 1px solid var(--vault-gold);
+    border-radius: 14px;
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.07),
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: var(--vault-gold-light);
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    letter-spacing: 0.045em;
+}
+
+.modal p {
+    color: #e0e3e4;
+    line-height: 1.75;
+}
+
+.modal button {
+    margin-top: 8px;
+}
+
+/* Também fornece o acabamento do modal de vitória caso exista no HTML. */
+#win-modal {
+    backdrop-filter: blur(6px);
+}
+
+#win-modal .modal {
+    border-color: var(--vault-gold-light);
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.07),
+        0 0 0 1px rgba(198, 163, 99, 0.16),
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Imagens dos enigmas ---------- */
+
+.cube .painel .img-letter,
+.cube .painel .note-horas {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid rgba(198, 163, 99, 0.55);
+    border-radius: 5px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
+}
+
+/* ---------- Ajustes de tela ---------- */
+
+@media (max-width: 600px) {
+    header {
+        gap: 10px;
+        padding: 10px 13px;
+    }
+
+    header h1 {
+        letter-spacing: 0.08em;
+    }
+
+    #watch {
+        min-width: 94px;
+        padding: 8px 9px;
+        font-size: 1rem;
+    }
+
+    header .restart {
+        padding: 7px 10px;
+    }
+
+    .centralizer.exib-modal {
+        padding: 14px;
+    }
+
+    .modal {
+        padding: 22px 18px;
+    }
 }

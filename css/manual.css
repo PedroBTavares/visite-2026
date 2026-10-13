@@ -12,3 +12,209 @@ td:first-child, th{
     font-weight: bold;
     background-color: lightgray;
 }
+
+
+/* =========================================================
+   VISITE 2026 — MANUAL DE INVESTIGAÇÃO
+   Complemento para css/manual.css
+   ========================================================= */
+
+/* ---------- Fundo e tipografia ---------- */
+
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 22px 56px;
+    color: #27313a;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    line-height: 1.75;
+    background-color: #0b121b;
+    background-image:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(50, 69, 85, 0.55),
+            transparent 65%
+        ),
+        linear-gradient(
+            160deg,
+            #111c28 0%,
+            #080e15 100%
+        );
+}
+
+/* ---------- Título principal ---------- */
+
+body > h1 {
+    max-width: 980px;
+    margin: 0 auto 30px;
+    padding: 20px 16px;
+    color: #ead19a;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 3px 16px rgba(198, 163, 99, 0.19);
+    border-bottom: 1px solid rgba(198, 163, 99, 0.48);
+}
+
+/* ---------- Páginas do manual ---------- */
+
+body > section {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto 24px;
+    padding: clamp(22px, 4vw, 38px);
+    overflow-wrap: break-word;
+    color: #303029;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(155, 117, 57, 0.055),
+            transparent 22%,
+            transparent 80%,
+            rgba(155, 117, 57, 0.04)
+        ),
+        linear-gradient(
+            180deg,
+            #f3ead6 0%,
+            #e9ddc3 100%
+        );
+    border: 1px solid #b99b60;
+    border-radius: 10px;
+    box-shadow:
+        inset 0 0 0 4px rgba(255, 255, 255, 0.16),
+        0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+/* Faixa de identificação na margem das páginas. */
+body > section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5px;
+    background: linear-gradient(
+        180deg,
+        #e2cb91,
+        #a78345 50%,
+        #d0b477
+    );
+    border-radius: 9px 0 0 9px;
+    pointer-events: none;
+}
+
+/* ---------- Títulos das seções ---------- */
+
+body > section h2 {
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    color: #293746;
+    font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+    text-align: left;
+    border-bottom: 1px solid rgba(151, 115, 56, 0.45);
+}
+
+/* ---------- Texto e destaques ---------- */
+
+body > section p {
+    margin: 0 0 22px;
+    color: #34332e;
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+body > section p:last-child {
+    margin-bottom: 0;
+}
+
+body > section strong {
+    color: #65491e;
+    font-weight: 800;
+}
+
+body > section br {
+    line-height: inherit;
+}
+
+/* ---------- Tabela de coordenadas ---------- */
+
+.table-horas {
+    box-sizing: border-box;
+    width: min(100%, 620px);
+    margin: 22px auto 0;
+    border-collapse: collapse;
+    border: 1px solid #9c804d;
+    background: #faf4e7;
+    box-shadow: 0 5px 14px rgba(55, 43, 22, 0.12);
+}
+
+.table-horas th,
+.table-horas td {
+    padding: 11px 15px;
+    color: #34332e;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #c8b58f;
+}
+
+.table-horas th,
+.table-horas td:first-child {
+    color: #493719;
+    font-weight: 800;
+    background: #dfcfaa;
+}
+
+.table-horas th {
+    background: linear-gradient(
+        180deg,
+        #e9d9b5,
+        #d8c49a
+    );
+}
+
+.table-horas td:not(:first-child) {
+    background: rgba(255, 252, 244, 0.72);
+}
+
+/* ---------- Ajustes para telas menores ---------- */
+
+@media (max-width: 600px) {
+    body {
+        padding: 18px 12px 32px;
+    }
+
+    body > h1 {
+        margin-bottom: 20px;
+        padding: 16px 8px;
+        letter-spacing: 0.1em;
+    }
+
+    body > section {
+        margin-bottom: 16px;
+        padding: 23px 18px 23px 22px;
+        border-radius: 8px;
+    }
+
+    body > section h2 {
+        margin-bottom: 15px;
+    }
+
+    body > section p {
+        font-size: 0.96rem;
+        line-height: 1.75;
+    }
+
+    .table-horas th,
+    .table-horas td {
+        padding: 9px 6px;
+    }
+}
